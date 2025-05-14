@@ -1,42 +1,36 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
-public class Player : MonoBehaviour
+namespace M3L4
 {
-    public int health = 10;
-    public CharacterController controller;
-    public float moveSpeed = 2f;
-    private Vector3 direction;
-    //public AudioSource audioSource;
-    //public AudioClip damageSound;
-
-
-    private void Update()
+    public class Player : MonoBehaviour
     {
-        direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(direction * (Time.deltaTime * moveSpeed));
-    }
+        public int health = 10;
+        public GameObject fireballPrefab;
+        public Transform attackPoint;
+        public int coins;
 
-    public void TakeDamage(int damage)
-    {
-        //Actualización de los puntos de vida del jugador en función del daño
-        health -= damage; // 8
 
-        if (health > 0) // 8 > 0
+        private void Update()
         {
-            //Reproduciendo el sonido de recibir daño
-            //audioSource.PlayOneShot(damageSound);
-            print("Reproducir sonido");
-        }
-        else
-        {
-            //Obtener el índice de la escena actual y reiniciarla
-            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(sceneIndex);
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(fireballPrefab, attackPoint.position, attackPoint.rotation);
+            }
         }
 
-        print("Salud del jugador: " + health);
+        public void TakeDamage(int damage)
+        {
+            //Actualización de los puntos de vida del jugador
+            health -= damage; // 8
+
+            print("Salud Actual del Jugador: " + health);
+        }
+
+
+        // Metodo para aumentar las monedas que tiene el player
+        public void CollectCoins()
+        {
+            coins++;
+        }
     }
 }
