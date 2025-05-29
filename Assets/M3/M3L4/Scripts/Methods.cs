@@ -4,32 +4,44 @@ public class Methods : MonoBehaviour
 {
     private void Start()
     {
-        Greet(); // Llamar el metodo void
-        print("Tengo: " + GetGoldCoins() + " monedas"); // Llamar el metodo void con return
-        AddPoints("Ganaste", 5); // Llamar el metodo con parametros
+        // 1. Método void sin parámetros:
+        Saludar();
+
+        // 2. Método con return:
+        print("Tengo: " + SumarMonedas(3, 5) + " monedas");
+
+        // 3. Método void con parámetros:
+        ElegirColor("Rojo");
+
+        // SUPER IMPORTANTE: Los argumentos se deben ingresar en el mismo orden que se solicitan
     }
 
-    #region Ejemplo de un metodo
-    private void Greet()
+    #region Metodo con void
+    // Imagina un botón en un juego: lo presionas y algo mágico pasa, 
+    // pero no le das datos ni esperas respuesta.
+    private void Saludar()
     {
-        print("¡Hola, soy un valiente caballero!"); 
+        print("¡Hola, soy un valiente caballero!");
     }
     #endregion
 
-    #region Ejemplo de un metodo con return
-    private int GetGoldCoins()
+    #region Metodo con return
+    // Imagina que los métodos con return son como máquinas expendedoras:
+    // Les das algo (parámetros).
+    // Hacen algo (código).
+    // Te devuelven algo (resultado).
+    private int SumarMonedas(int a, int b)
     {
-        int coins = 10;
-        return coins;
+        return a + b; // ¡Te devuelve la suma!
     }
     #endregion
 
-    #region Ejemplo de un metodo con parametros
-    private void AddPoints(string winText, int pointsEarned)
+    #region Metodo con parametros
+    // Imagina que los métodos con parametros son como un pincel mágico: 
+    // le dices que color usar y pinta exactamente como le indicaste
+    private void ElegirColor(string color)
     {
-        int totalPoints = 5;
-        totalPoints += pointsEarned;
-        print(winText + " " + pointsEarned + " puntos! Ahora tienes: " + totalPoints);
+        print("¡Has elegido el color " + color);
     }
     #endregion
 }
