@@ -14,6 +14,7 @@ namespace M3L6
         {
             currentHealth += 10;
             healthText.text = $"Vida: {currentHealth}";
+            //print("Vida: " + currentHealth);
             healthStateText.text = "Has recibido 10 puntos de vida!";
         }
 
