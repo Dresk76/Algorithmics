@@ -25,6 +25,9 @@ public class ComparisonOperators : MonoBehaviour
 
     #region 1. Igual a (==)
 
+    /// <summary>
+    /// Verifica si dos valores son exactamente iguales.
+    /// </summary>
     private void EqualExample()
     {
         int score = 100;
@@ -36,8 +39,11 @@ public class ComparisonOperators : MonoBehaviour
 
     #endregion
 
-    #region 2. Diferente (!=)
+    #region 2. Diferente de (!=)
 
+    /// <summary>
+    /// Verifica si dos valores son diferentes.
+    /// </summary>
     private void NotEqualExample()
     {
         string equippedWeapon = "Pistola";
@@ -51,6 +57,9 @@ public class ComparisonOperators : MonoBehaviour
 
     #region 3. Mayor que (>)
 
+    /// <summary>
+    /// Verifica si un valor es más grande que otro.
+    /// </summary>
     private void GreaterThanExample()
     {
         float speed = 8.2f;
@@ -64,6 +73,9 @@ public class ComparisonOperators : MonoBehaviour
 
     #region 4. Menor que (<)
 
+    /// <summary>
+    /// Verifica si un valor es más pequeño que otro.
+    /// </summary>
     private void LessThanExample()
     {
         int enemiesAlive = 3;
@@ -77,6 +89,9 @@ public class ComparisonOperators : MonoBehaviour
 
     #region 5. Mayor o igual que (>=)
 
+    /// <summary>
+    /// Verifica si un valor es igual o más grande que otro.
+    /// </summary>
     private void GreaterOrEqualExample()
     {
         int level = 10;
@@ -90,6 +105,9 @@ public class ComparisonOperators : MonoBehaviour
 
     #region 6. Menor o igual que (<=)
 
+    /// <summary>
+    /// Verifica si un valor es igual o más pequeño que otro.
+    /// </summary>
     private void LessOrEqualExample()
     {
         float energy = 15.0f;

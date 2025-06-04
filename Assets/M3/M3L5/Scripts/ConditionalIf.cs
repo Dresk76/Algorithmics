@@ -2,65 +2,47 @@ using UnityEngine;
 
 public class ConditionalIf : MonoBehaviour
 {
-    public bool isRaining; // false
-    public int health = 15;
-    public int coinsPlayer = 12;
+    public string semaforo;
+    public bool tareaTerminada;
 
 
     private void Start()
     {
-        //CheckRainfall();
-        TakeDamage();
+        CheckTrafficLight();
+        //CheckGame();
     }
 
 
     #region If
 
-    private void CheckRainfall()
+    private void CheckTrafficLight()
     {
-        if (isRaining == true)
+        if (semaforo == "rojo")
         {
-            print("Esta lloviendo");
+            print("¡El carro para!");
         }
 
-        // if (isRaining)
-        // {
-        //     print("Esta lloviendo");
-        // }
-
-        if (isRaining == false)
+        if (semaforo == "verde")
         {
-            print("No esta lloviendo");
+            print("¡El carro avanza!");
         }
-
-        // if (!isRaining)
-        // {
-        //     print("No esta lloviendo");
-        // }
     }
 
     #endregion
 
     #region If-Else
 
-    private void TakeDamage()
+    private void CheckGame()
     {
-        if (health >= 13) // 15 >= 13
+        if (tareaTerminada == true)
         {
-            print("Reducir numero de vidas.");
+            print("¡Puedes jugar!");
         }
         else
         {
-
+            print("¡No puedes jugar!");
         }
     }
 
     #endregion
-
-
-
-    private void Test()
-    {
-        
-    }
 }
