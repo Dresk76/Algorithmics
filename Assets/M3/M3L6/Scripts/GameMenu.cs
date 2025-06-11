@@ -1,22 +1,19 @@
 using UnityEngine;
 
-namespace M3L6
+public class GameMenu : MonoBehaviour
 {
-    public class GameMenu : MonoBehaviour
+    public void Play()
     {
-        public void Play()
-        {
-            print("Iniciaste el juego, Buena Suerte!");
-        }
+        print("Iniciaste el juego, Buena Suerte!");
+    }
 
-        public void Options()
-        {
-            print("Bienvenido al menu de opciones");
-        }
+    public void Options()
+    {
+        print("Bienvenido al menu de opciones");
+    }
 
-        public void Credits()
-        {
-            print("Juego realizado por Abelardo Patachún");
-        }
+    public void Credits()
+    {
+        print("Juego realizado por Abelardo Patachún");
     }
 }
