@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    public float velocity = 5f;
+    public float velocity = 4f;
 
     void Update()
     {

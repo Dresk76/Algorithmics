@@ -4,7 +4,7 @@ namespace M3L7
 {
     public class Player : MonoBehaviour
     {
-        public float velocity = 5f;
+        public float velocity = 4f;
         public Color normalColor;
         public Color specialColor;
         private MeshRenderer meshRenderer;

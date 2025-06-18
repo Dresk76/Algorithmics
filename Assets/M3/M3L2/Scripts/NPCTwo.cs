@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class NPCTwo : MonoBehaviour
 {
+    // Velocidad de los NPC
     public float velocity = 1.2f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         // Crear un Vector3 para almacenar la nueva posición
