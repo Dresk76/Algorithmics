@@ -20,13 +20,4 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("VelX", moveX);
         animator.SetFloat("VelZ", moveZ);
     }
-
-
-
-
-
-    #region SEGUNDA PARTE
-    //animator.SetFloat("VelX", moveX);
-    //animator.SetFloat("VelZ", moveZ);
-    #endregion
 }
