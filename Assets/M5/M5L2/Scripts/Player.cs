@@ -4,6 +4,9 @@ namespace M5L2
 {
     public class Player : MonoBehaviour
     {
+        public int points;
+
+
         void Start()
         {
 
