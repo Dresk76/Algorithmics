@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 247881628}
   - component: {fileID: 247881627}
   - component: {fileID: 247881626}
-  - component: {fileID: 247881625}
+  - component: {fileID: 247881630}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -355,19 +355,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &247881625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247881624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b35151a64e0ac3448a7bbc85f5da14b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 1.2
 --- !u!136 &247881626
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -448,6 +435,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247881630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247881624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074abd8419503e14098b1968677f9d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 1.2
 --- !u!1 &828714402
 GameObject:
   m_ObjectHideFlags: 0
