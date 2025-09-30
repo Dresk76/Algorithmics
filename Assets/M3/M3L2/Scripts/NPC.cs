@@ -6,7 +6,7 @@ public class NPC : MonoBehaviour
     int health = 5;
 
     // Nivel de los NPC
-    int level = 5;
+    int level = 10;
 
     // Velocidad de los NPC
     public float velocity = 1.2f;
