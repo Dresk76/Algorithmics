@@ -19,6 +19,10 @@ namespace M5L2
         public Transform shootPoint;
         #endregion
 
+        public GameObject uiObj;
+        public GameObject scorePanel;
+        public GameObject gameMenu;
+
         void Update()
         {
             Move();
@@ -55,7 +59,7 @@ namespace M5L2
         //     }
         // }
         #endregion
-        
+
         #region Pag 86
         void Shoot()
         {
@@ -68,6 +72,13 @@ namespace M5L2
                 shootTimer = shootInterval;
             }
         }
-        # endregion
+        #endregion
+
+        public void Dead()
+        {
+            gameMenu.SetActive(false);
+            scorePanel.SetActive(false);
+            uiObj.SetActive(true);
+        }
     }
 }
