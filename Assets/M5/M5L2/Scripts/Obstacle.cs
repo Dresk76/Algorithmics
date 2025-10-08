@@ -12,8 +12,6 @@ namespace M5L2
             {
                 Player player = collision.GetComponent<Player>();
                 player.Dead();
-                Destroy(player);
-                Debug.Log("Entro en Obstacle");
             }
         }
     }

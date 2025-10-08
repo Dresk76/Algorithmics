@@ -25,7 +25,6 @@ public class Projectile : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            Debug.Log("Destruyo el Obstacle");
         }
     }
 }

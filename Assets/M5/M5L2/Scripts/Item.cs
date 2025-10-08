@@ -6,6 +6,14 @@ namespace M5L2
 {
     public class Item : MonoBehaviour
     {
+        private UIManager uiManager;
+
+
+        void Awake()
+        {
+            uiManager = FindObjectOfType<UIManager>();
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.tag == "Player")
@@ -14,7 +22,7 @@ namespace M5L2
                 player.points++;
                 Destroy(this.gameObject);
 
-                Debug.Log("Entro en Item");
+                uiManager.Score(player.points);
             }
         }
     }

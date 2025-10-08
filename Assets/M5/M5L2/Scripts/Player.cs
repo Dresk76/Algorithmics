@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace M5L2
@@ -5,23 +7,23 @@ namespace M5L2
     public class Player : MonoBehaviour
     {
         public int points;
-
-        #region Pag 77
+        public UIManager uiManager;
         public Projectile projectilePrefab;
-        #endregion
-
-        #region Pag 79
+        public Transform shootPoint;
         public float shootInterval = 0.5f;
         public float shootTimer;
-        #endregion
+        public float moveTime = 1.5f;
+        private Vector3 startPos;
+        private Vector3 targetPos;
+        private float elapsedTime;
+        private Spawner[] spawners;
 
-        #region Pag 86
-        public Transform shootPoint;
-        #endregion
 
-        public GameObject uiObj;
-        public GameObject scorePanel;
-        public GameObject gameMenu;
+        void Start()
+        {
+            startPos = transform.position;
+            targetPos = new Vector3(startPos.x, startPos.y + 1f, startPos.z);
+        }
 
         void Update()
         {
@@ -31,6 +33,12 @@ namespace M5L2
 
         void Move()
         {
+            if (elapsedTime < moveTime)
+            {
+                elapsedTime += Time.deltaTime;
+                transform.position = Vector3.Lerp(startPos, targetPos, elapsedTime / moveTime);
+            }
+
             if (Input.GetMouseButton(0))
             {
                 Vector2 mousePos = Input.mousePosition;
@@ -39,28 +47,6 @@ namespace M5L2
             }
         }
 
-        #region Pag 77
-        // void Shoot()
-        // {
-        //     Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        // }
-        #endregion
-
-        #region Pag 79
-        // void Shoot()
-        // {
-        //     shootTimer -= Time.deltaTime;
-
-        //     if (shootTimer <= 0)
-        //     {
-        //         Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
-        //         shootTimer = shootInterval;
-        //     }
-        // }
-        #endregion
-
-        #region Pag 86
         void Shoot()
         {
             shootTimer -= Time.deltaTime;
@@ -72,13 +58,16 @@ namespace M5L2
                 shootTimer = shootInterval;
             }
         }
-        #endregion
 
         public void Dead()
         {
-            gameMenu.SetActive(false);
-            scorePanel.SetActive(false);
-            uiObj.SetActive(true);
+            uiManager.Restart();
+            transform.position = startPos;
+
+            foreach (var item in spawners)
+            {
+                item.Restart();
+            }
         }
     }
 }
